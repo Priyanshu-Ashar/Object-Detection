@@ -1,17 +1,31 @@
 # Object-Detection
-Vehicle Counting, Classification & Detection using OpenCV & Python
-Today, we’re going to build an advanced vehicle detection and classification project using OpenCV. We’ll use the YOLOv3 model with OpenCV-python. Open-CV is a real-time computer vision library of Python. We can use YOLO directly with OpenCV.
+OpenCV Vehicle Detection and Classification Project
+In this project, we’ll detect and classify cars, HMV ( Heavy Motor Vehicle) , LMV (Light Motor Vehicle) on the road, and count the number of vehicles traveling through a road. And the data will be stored to analyze different vehicles that travel through the road.
 
-What is YOLO?
-YOLO stands for You Only Look Once. It is a real-time object recognition algorithm. It can classify and localize multiple objects in a single frame. YOLO is a very fast and accurate algorithm for its simpler network architecture.
+We’ll create two programs to do this project. The first one will be the tracker for vehicle detection using OpenCV that keeps track of each and every detected vehicle on the road and the 2nd one will be the main detection program.
 
-How does YOLO work?
-YOLO works using mainly these techniques.
+Prerequisites for Vehicle Detection and Classification Project using OpenCV:
+1. Python – 3.x (We used python 3.8.8 in this project)
+2. OpenCV – 4.4.0
 
-1. Residual Blocks – Basically, it divides an image into NxN grids.
+It is strongly recommended to run DNN models on GPU.
+You can install OpenCV via “pip install opencv-python opencv_contrib-python”.
+3. Numpy – 1.20.3
+4. YOLOv3 Pre-trained model weights and Config Files.
 
-2. Bounding Box regression – Each grid cell is sent to the model. Then YOLO determines the probability of the cell contains a certain class and the class with the maximum probability is chosen.
+Download Vehicle Detection & Classification Python OpenCV Code
+Please download the source code of opencv vehicle detection & classification: Vehicle Detection and Classification OpenCV Code
 
-3. Intersection Over Union (IOU) – IOU is a metric that evaluates intersection between the predicted bounding box and the ground truth bounding box. A Non-max suppression technique is applied to eliminate the bounding boxes that are very close by performing the IoU with the one having the highest class probability among them.
+Tracker:
+The tracker basically uses the Euclidean_distance concept to keep track of an object. It calculates the difference between two center points of an object in the current frame vs the previous frame, and if the distance is less than the threshold distance then it confirms that the object is the same object of the previous frame.
 
-intersection over union
+
+Vehicle Counter:
+
+Steps for Vehicle Detection and Classification using OpenCV:
+1. Import necessary packages and Initialize the network.
+2. Read frames from a video file.
+3. Pre-process the frame and run the detection.
+4. Post-process the output data.
+5. Track and count all vehicles on the road
+6. Save the final data to a CSV file.
